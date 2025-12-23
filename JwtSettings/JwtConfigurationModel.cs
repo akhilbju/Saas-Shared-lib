@@ -1,5 +1,6 @@
-public record JwtConfigurationModel(
-    string Key,
-    string Issuer,
-    string Audience
-);
+public record  class JwtConfigurationModel
+{
+    public string Key{ get; set; }
+    public string Issuer{ get; set; }
+    public string Audience{ get; set; }
+};
