@@ -1,3 +1,5 @@
+using System;
+
 public record class RefreshToken
 {
     public int TokenId { get; set; }

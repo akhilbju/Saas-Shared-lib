@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
-    <RootNamespace>Saas_Shared_lib</RootNamespace>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>disable</Nullable>
+    <PackageId>Saas.Shared.Lib</PackageId>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.0-preview.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer"
+      Version="9.0.0-preview.1" />
   </ItemGroup>
 
 </Project>
