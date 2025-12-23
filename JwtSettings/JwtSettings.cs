@@ -2,7 +2,6 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 public class JwtSettings : IJwtSettings
 {
@@ -11,12 +10,13 @@ public class JwtSettings : IJwtSettings
     {
         _config = config.Value;
     }
-    public string GenerateToken(string userId, string role)
+    public string GenerateToken(User user)
     {
         var claims = new[]
         {
-        new Claim(JwtRegisteredClaimNames.Sub, userId),
-        new Claim(ClaimTypes.Role, role)
+        new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+        new Claim(ClaimTypes.Role, user.UserType),
+        new Claim(JwtRegisteredClaimNames.Name, user.Username)
     };
 
         var key = new SymmetricSecurityKey(
@@ -29,7 +29,7 @@ public class JwtSettings : IJwtSettings
             issuer: _config.Issuer,
             audience: _config.Audience,
             claims: claims,
-            expires: DateTime.UtcNow.AddHours(1),
+            expires: DateTime.UtcNow.AddHours(3),
             signingCredentials: creds);
 
         return new JwtSecurityTokenHandler().WriteToken(token);

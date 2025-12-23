@@ -1,4 +1,6 @@
+using System.Security.Claims;
+
 public interface IJwtSettings
 {
-    string GenerateToken(string userId, string role);
+    string GenerateToken(User user);
 }
