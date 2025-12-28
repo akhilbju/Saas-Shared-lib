@@ -1,4 +1,4 @@
-public class GetProjectRequest
+public record class GetProjectRequest
 {
     public string ProjectName { get; set; }
     public int RowsPerPage { get; set; }
