@@ -8,6 +8,6 @@ public record class CreateTaskRequest
     public long Duration { get; set; }
     public string Type { get; set; }
     public List<int> AssignedTo { get; set; } = new List<int>();
-    public string ProjectId { get; set; }
+    public int ProjectId { get; set; }
 
 }
