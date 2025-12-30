@@ -4,6 +4,8 @@ public class SuccessMessages
     public const string TokenRefreshed = "Token refreshed successfully.";
     public const string LoginSuccess = "Login successful.";
     public const string ProjectCreationSuccess = "Project created successfully.";
+    public const string CreationSuccess = "created successfully.";
+
 
     
 

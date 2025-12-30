@@ -6,4 +6,6 @@ public record class ProjectStatuses
     public Project Project { get; set; }
     public string Status { get; set; }
     public int StatusId { get; set; }
+    public bool IsDefault { get; set; }
+    public int Position { get; set; }   
 }
